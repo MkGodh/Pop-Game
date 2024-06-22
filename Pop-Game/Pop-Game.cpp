@@ -38,17 +38,11 @@ void bump_show(bool bump[12][12]) {
 }
 
 void bump_pop(bool bump[12][12], int x1, int x2, int y1, int y2) {
-    int i = x1;
-    int j = y1;
-    while (bump[i][j] == bump[x2][y2]) {
-        bump[i][j] = false;
-        cout << "!POP! ";
-        j++;
-        if (j == 12) {
-            i++;
-            j = 0;
+    for (int i = x1; i <= x2; i++) {
+        for (int j = y1; j <= y2; j++) {
+            bump[i][j] = false;
+            cout << "!POP! ";
         }
-
     }
 }
 
